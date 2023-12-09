@@ -1,4 +1,4 @@
-package com.example.tugas
+package com.example.tugas.View
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,20 +9,19 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tugas.Adapter.PromotionAdapter
-import com.example.tugas.Adapter.TrendingAdapter
 import com.example.tugas.Model.Promotion
 import com.example.tugas.Model.Trending
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.example.tugas.R
+import com.example.tugas.ViewModel.PromotionAdapter
+import com.example.tugas.ViewModel.TrendingAdapter
 
 class Home : Fragment() {
 
+
     private var param1: String? = null
     private var param2: String? = null
+
+
 
     private lateinit var promotionRecyclerView: RecyclerView
     private lateinit var trendingRecyclerView: RecyclerView
@@ -32,6 +31,7 @@ class Home : Fragment() {
 
     private lateinit var promotionAdapter: PromotionAdapter
     private lateinit var trendingAdapter: TrendingAdapter
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,7 +46,8 @@ class Home : Fragment() {
         // Promotion Recycler View
         promotionRecyclerView = view.findViewById(R.id.rv_promotion)
         promotionRecyclerView.setHasFixedSize(true)
-        promotionRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        promotionRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
 
         promotionList = ArrayList()
 
@@ -61,7 +62,8 @@ class Home : Fragment() {
         // Trending Recycler View
         trendingRecyclerView = view.findViewById(R.id.rv_trending_album)
         trendingRecyclerView.setHasFixedSize(true)
-        trendingRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        trendingRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
 
         trendingList = ArrayList()
 
@@ -76,10 +78,8 @@ class Home : Fragment() {
         trendingRecyclerView.adapter = trendingAdapter
 
 
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+
     }
 
 
@@ -91,6 +91,17 @@ class Home : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+
+
+    private fun finish() {
+        TODO("Not yet implemented")
+    }
+
+    private fun setResult(resultOk: Int, intent: Intent) {
+        TODO("Not yet implemented")
+    }
+
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -101,13 +112,7 @@ class Home : Fragment() {
          * @return A new instance of fragment Home.
          */
         // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Home().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+
     }
 }

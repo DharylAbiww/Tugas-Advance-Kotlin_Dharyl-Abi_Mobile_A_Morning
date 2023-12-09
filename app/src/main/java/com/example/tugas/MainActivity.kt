@@ -3,10 +3,14 @@ package com.example.tugas
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.tugas.View.Home
+import com.example.tugas.View.Profile
+import com.example.tugas.View.Setting
 import com.example.tugas.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var binding: ActivityMainBinding
 
@@ -29,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+
+
+
 
     }
     private fun replaceFragment(fragment : Fragment){

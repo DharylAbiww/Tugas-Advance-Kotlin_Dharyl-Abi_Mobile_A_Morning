@@ -1,4 +1,4 @@
-package com.example.tugas.Adapter
+package com.example.tugas.ViewModel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
